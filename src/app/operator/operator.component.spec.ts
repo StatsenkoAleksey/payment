@@ -23,7 +23,6 @@ import { AppComponent } from '../app.component';
 import { APP_BASE_HREF } from '@angular/common';
 import { RequesterService } from '../services/requester.service';
 import { of } from 'rxjs';
-import 'rxjs/add/observable/of';
 
 describe('OperatorComponent', () => {
   let component: OperatorComponent;

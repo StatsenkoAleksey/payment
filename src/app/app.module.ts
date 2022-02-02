@@ -24,6 +24,7 @@ import { InfoSnackbarComponent } from './info-snackbar/info-snackbar.component';
 export const appRoutes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full' },
   { path: 'operator/:id', component: OperatorComponent },
+  { path: '**', component: MainComponent, pathMatch: 'full' },
 ];
 
 @NgModule({
