@@ -1,0 +1,60 @@
+<section class="operator-wrapper">
+  <div class="container">
+    <div class="row align-items-center justify-content-center mb-30">
+      <div class="d-flex align-items-center">
+        <img [src]="operator!.logo" alt="" class="operator-logo">
+      </div>
+    </div>
+    <form [formGroup]="fillForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8 full-width-input">
+          <mat-form-field appearance="outline">
+            <mat-label>Mobile Phone</mat-label>
+            <input type="tel"
+                   matInput
+                   formControlName="phone"
+                   name="phone" id="phone"
+                   [textMask]="{mask: phoneMask}"
+                   placeholder="+7 (999) 999-9999">
+            <mat-error
+              *ngIf="!fillForm.get('phone').hasError('required') && fillForm.get('phone').hasError('pattern') && !fillForm.get('phone').hasError('validOperatorCode')">
+              <span>Invalid phone</span>
+            </mat-error>
+            <mat-error *ngIf="!fillForm.get('phone').hasError('required') && fillForm.get('phone').hasError('validOperatorCode')">
+              <span>Invalid operator code</span>
+            </mat-error>
+            <mat-error *ngIf="fillForm.get('phone').hasError('required')">
+              <span>Phone is required</span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col-md-7"></div>
+        <div class="col-12 col-lg-8 full-width-input">
+          <mat-form-field appearance="outline">
+            <mat-label>Amount</mat-label>
+            <input matInput
+                   formControlName="amount"
+                   name="amount" id="amount"
+                   [textMask]="{mask: amountMask, guide: false}"
+                   type="tel">
+            <span matSuffix>₽</span>
+            <mat-error *ngIf="!fillForm.get('amount').hasError('required') && fillForm.get('amount').hasError('noLess')">
+              <span>Should be not less than 1₽</span>
+            </mat-error>
+            <mat-error *ngIf="!fillForm.get('amount').hasError('required') && fillForm.get('amount').hasError('noMore')">
+              <span>Should be no more than 1000₽</span>
+            </mat-error>
+            <mat-error *ngIf="fillForm.get('amount').hasError('required')">
+              <span>Amount is required</span>
+            </mat-error>
+            <mat-hint>Min 1₽ Max 1000₽</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="col-md-7"></div>
+        <div class="col-12 col-lg-8 d-flex justify-content-end">
+          <button type="submit" class="fill-btn" mat-raised-button color="primary" [disabled]="!fillForm.valid">Fill</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+.operator-wrapper {
+  padding: 30px 0;
+
+}
+
+.operator-logo {
+  max-height: 100px;
+}
+
+.fill-btn {
+  width: 100%;
+
+  @media(min-width: 576px) {
+    max-width: 350px;
+  }
+}
