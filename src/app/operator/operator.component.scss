@@ -7,10 +7,10 @@
   max-height: 100px;
 }
 
+.container {
+  width: 350px;
+}
+
 .fill-btn {
   width: 100%;
-
-  @media(min-width: 576px) {
-    max-width: 350px;
-  }
 }

@@ -18,8 +18,6 @@ export class RequesterService {
   }
 
   public fill(data: FillForm): Promise<MockFillType> {
-    console.log(data);
-    // return this.http.post('/random', data, {});
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (Math.round(Math.random())) {

@@ -1,13 +1,13 @@
 <section class="operator-wrapper">
-  <div class="container">
+  <mat-card class="container">
     <div class="row align-items-center justify-content-center mb-30">
       <div class="d-flex align-items-center">
-        <img [src]="operator!.logo" alt="" class="operator-logo">
+        <img [src]="operator.logo" alt="" class="operator-logo">
       </div>
     </div>
     <form [formGroup]="fillForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-8 full-width-input">
+        <div class="full-width-input">
           <mat-form-field appearance="outline">
             <mat-label>Mobile Phone</mat-label>
             <input type="tel"
@@ -29,7 +29,7 @@
           </mat-form-field>
         </div>
         <div class="col-md-7"></div>
-        <div class="col-12 col-lg-8 full-width-input">
+        <div class="full-width-input">
           <mat-form-field appearance="outline">
             <mat-label>Amount</mat-label>
             <input matInput
@@ -51,10 +51,13 @@
           </mat-form-field>
         </div>
         <div class="col-md-7"></div>
-        <div class="col-12 col-lg-8 d-flex justify-content-end">
+        <div class="col-12 col-lg-12 d-flex justify-content-end">
           <button type="submit" class="fill-btn" mat-raised-button color="primary" [disabled]="!fillForm.valid">Fill</button>
         </div>
       </div>
     </form>
-  </div>
+    <mat-card-footer>
+      <mat-progress-bar *ngIf="fillForm.disabled && !!fillForm.value.phone" mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
 </section>

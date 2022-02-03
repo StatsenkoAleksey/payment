@@ -1,5 +1,16 @@
 # Payment
 
+## About solution
+
+[The original source of this decision](https://github.com/Xaz16/mobilePayment)
+List of improvements:
+- The solution has been updated to Angular 13
+- When entering an invalid URL or ID there is a redirect to the main page
+- Added a lock on the "Fill" button to avoid possible clicks while waiting for a response from the "server"
+- Refill balance form has been changed
+- Added a request indeterminate progress bar in footer of card
+- Added justify-content-center to container of cards at main page
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
 
 ## Development server

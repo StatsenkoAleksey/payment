@@ -47,7 +47,7 @@ export class OperatorComponent {
   }
 
   onSubmit(formDirective: FormGroupDirective) {
-    this.fillForm.disable();    
+    this.fillForm.disable();
     this.requester.fill(this.fillForm.value)
       .then((res) => {
         this.snackBar.openFromComponent(InfoSnackbarComponent, {

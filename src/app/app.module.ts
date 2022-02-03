@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { TextMaskModule } from 'angular2-text-mask';
 import { InfoSnackbarComponent } from './info-snackbar/info-snackbar.component';
@@ -24,7 +25,7 @@ import { InfoSnackbarComponent } from './info-snackbar/info-snackbar.component';
 export const appRoutes: Routes = [
   { path: '', component: MainComponent, pathMatch: 'full' },
   { path: 'operator/:id', component: OperatorComponent },
-  { path: '**', component: MainComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
@@ -55,7 +56,8 @@ export const appRoutes: Routes = [
     TextMaskModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
