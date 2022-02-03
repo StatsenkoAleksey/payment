@@ -3,6 +3,7 @@
 ## About solution
 
 [The original source of this decision](https://github.com/Xaz16/mobilePayment)
+
 List of improvements:
 - The solution has been updated to Angular 13
 - When entering an invalid URL or ID there is a redirect to the main page
